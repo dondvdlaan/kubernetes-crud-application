@@ -8,7 +8,7 @@ Summary:
 - REACT as FE
 - Node.js as BE
 - MySQL as DB
-- Load the Kubernetes files to Minikube and connect to the node via Minikube <IP><fe>:xxx
+- Load the Kubernetes files to Minikube and connect to the node via Minikube service <IP><fe>:xxx
 
 TODO: 
 
