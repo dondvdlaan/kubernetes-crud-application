@@ -1,5 +1,6 @@
 backup*.sql
-node_modules/
+/node_modules
 .dockerignore
 .env
+/backup
 
