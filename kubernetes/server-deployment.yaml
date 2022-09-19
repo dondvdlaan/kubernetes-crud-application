@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:    
+        app: server
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+      - name: server
+        image: dvdlaan/testrepo:server
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: MYSQL_DATABASE
+          value: job
+        - name: MYSQL_HOST
+          value: mysql-service
+        - name: MYSQL_ROOT_PASSWORD
+          value: duck  
+        - name: MYSQL_USER
+          value: pato     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-service
+spec:
+  type: NodePort
+  selector:
+    app: server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: http

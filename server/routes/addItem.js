@@ -50,9 +50,6 @@ const employee = (req, res) => {
 };
 
 
-
-
-
 module.exports = {
   job,
   company,

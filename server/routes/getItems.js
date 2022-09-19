@@ -16,9 +16,14 @@ const all = (req, res) => {
         console.log("No such option")
     } 
     
+    console.log(req.originalUrl)
+
     db.transmit(_sql)
     .then(items =>res.send(items))
-    .catch(err=> console.log(err))
+    .catch(err=>{
+      console.log(err)
+      return res.send(err)
+    } )
 };
 
 const jobByID = (req, res) => 

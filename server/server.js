@@ -13,7 +13,8 @@ const messages      = require('./helpers/messages');
 
 // *************** Constants and variables ***************
 const server 	= express();
-const port      = process.env.REACT_APP_SERVER_PORT;
+const port      = 8000;
+// const port      = process.env.REACT_APP_SERVER_PORT; //NOTE: CAN NOT BE USED w K8
 
 // *************** Middleware *************** 
 server.use(cors());
@@ -38,7 +39,5 @@ server.get('/', (req, res) => res.send(`Good day! ${process.env.TEST_PARAM}`));
 
 // *************** Inititialisation ***************
 
-server.listen(  port, 
-                err => console.log(err ||
-                messages.portListening, port.green));
-
+server.listen(port, err => console.log(err ||
+                        messages.portListening, port));

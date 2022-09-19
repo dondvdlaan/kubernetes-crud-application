@@ -2,7 +2,7 @@
   "name": "fe",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://server:8000",
+  "proxy": "http://192.168.49.2:31789",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

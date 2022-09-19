@@ -1,5 +1,8 @@
 FROM node:10-alpine
 
+# Install curl
+RUN apk --no-cache add curl
+
 RUN mkdir -p /app
 WORKDIR /app
 
